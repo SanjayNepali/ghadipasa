@@ -22,8 +22,8 @@ src\app\(store)\account\page.module.css:66:  border-radius: var(--radius-full);
 src\app\(store)\cart\page.module.css:72:  border-radius: var(--radius-lg);
 src\app\(store)\cart\page.module.css:94:  border-radius: var(--radius-md);
 src\app\(store)\cart\page.module.css:131:  border-radius: var(--radius-full);
-src\app\(store)\cart\page.module.css:141:  border-radius: 50%;
-src\app\(store)\cart\page.module.css:174:  border-radius: 50%;
+src\app\(store)\cart\page.module.css:141:  border-radius: 0;
+src\app\(store)\cart\page.module.css:174:  border-radius: 0;
 src\app\(store)\cart\page.module.css:198:  border-radius: var(--radius-lg);
 src\app\(store)\cart\page.module.css:239:  border-radius: var(--radius-full);
 src\app\(store)\orders\[id]\success\page.module.css:19:  border-radius: var(--radius-lg);
@@ -112,7 +112,7 @@ src\components\admin\SiteSettingsForm\SiteSettingsForm.module.css:116:  border-r
 src\components\auth\AuthSlideshow.module.css:95:  border-radius: var(--radius-full);
 src\components\store\AboutTeaser\AboutTeaser.module.css:94:  border-radius: var(--radius-lg);
 src\components\store\AccountSidebar\AccountSidebar.module.css:7:  border-radius: var(--radius-lg);
-src\components\store\AccountSidebar\AccountSidebar.module.css:25:  border-radius: 50%;
+src\components\store\AccountSidebar\AccountSidebar.module.css:25:  border-radius: 0;
 src\components\store\AccountSidebar\AccountSidebar.module.css:68:  border-radius: var(--radius-md);
 src\components\store\AccountSidebar\AccountSidebar.module.css:98:  border-radius: var(--radius-full);
 src\components\store\AccountSidebar\AccountSidebar.module.css:108:  border-radius: var(--radius-md);
@@ -135,7 +135,7 @@ src\components\store\CheckoutForm\CheckoutForm.module.css:200:  border-radius: v
 src\components\store\CheckoutForm\CheckoutForm.module.css:229:  border-radius: var(--radius-lg);
 src\components\store\CheckoutForm\CheckoutForm.module.css:260:  border-radius: var(--radius-sm);
 src\components\store\CheckoutForm\CheckoutForm.module.css:315:  border-radius: var(--radius-full);
-src\components\store\EmptyState\EmptyState.module.css:15:  border-radius: 50%;
+src\components\store\EmptyState\EmptyState.module.css:15:  border-radius: 0;
 src\components\store\EmptyState\EmptyState.module.css:49:  border-radius: var(--radius-full);
 src\components\store\FilterSidebar\FilterSidebar.module.css:28:  border-radius: var(--radius-full);
 src\components\store\FilterSidebar\FilterSidebar.module.css:69:  border-radius: var(--radius-full);
@@ -161,7 +161,7 @@ src\components\store\Header\UserMenu.module.css:138:  border-radius: var(--radiu
 src\components\store\Header\UserMenu.module.css:164:  border-radius: var(--radius-md);
 src\components\store\HeroSlideshow\HeroSlideshow.module.css:67:  border-radius: var(--radius-md);
 src\components\store\HeroSlideshow\HeroSlideshow.module.css:100:  border-radius: var(--radius-full);
-src\components\store\HeroSlideshow\HeroSlideshow.module.css:113:  border-radius: 4px;
+src\components\store\HeroSlideshow\HeroSlideshow.module.css:113:  border-radius: 0;
 src\components\store\HeroSlideshow\HeroSlideshow.module.css:129:  border-radius: var(--radius-xl);
 src\components\store\HeroSlideshow\HeroSlideshow.module.css:146:  border-radius: var(--radius-xl);
 src\components\store\Newsletter\Newsletter.module.css:22:  border-radius: var(--radius-full);

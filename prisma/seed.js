@@ -4,6 +4,8 @@ const bcrypt = require("bcryptjs");
 
 const prisma = new PrismaClient();
 
+const SITE_SETTINGS_ID = "default";
+
 async function main() {
   console.log("Seeding database...");
 
@@ -22,7 +24,20 @@ async function main() {
   });
 
   console.log("Admin created:", admin.email);
-  console.log("Seeding complete.");
+
+  const settings = await prisma.siteSettings.upsert({
+    where:  { id: SITE_SETTINGS_ID },
+    update: {},
+    create: {
+      id:              SITE_SETTINGS_ID,
+      heroImages:      [],
+      announcementBar: null,
+      isStoreOpen:     true,
+    },
+  });
+
+  console.log("Site settings initialized:", settings.id);
+  console.log("Seeding complete. Categories and products deferred to admin panel.");
 }
 
 main()
