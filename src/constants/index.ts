@@ -1,5 +1,5 @@
-export const APP_NAME = "Nimki Gift Shop";
-export const APP_TAGLINE = "Handmade with love, gifted with heart.";
+export const APP_NAME = "Ghadi Pasa";
+export const APP_TAGLINE = "Luxury Watches All over Nepal";
 export const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
 
 export const ROUTES = {
@@ -76,7 +76,12 @@ export const ORDER_NOTES_MAX_LENGTH = 300;
 export const LOW_STOCK_THRESHOLD = 5;
 
 export const SOCIAL_LINKS = {
-  INSTAGRAM: "https://www.instagram.com/bouquetateiier/",
+  INSTAGRAM: "https://www.instagram.com/ghadipasa.np/",
   FACEBOOK: "#",
   PINTEREST: "#",
+} as const;
+
+export const CONTACT = {
+  PHONE: "9849839040",
+  ADDRESS: "Gongabu, Ganesthan, opposite Bigmart, Kathmandu",
 } as const;

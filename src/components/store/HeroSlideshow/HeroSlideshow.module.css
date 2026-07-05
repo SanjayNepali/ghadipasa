@@ -110,7 +110,7 @@
 .dot.dotActive {
   background-color: var(--color-primary);
   width: 22px;
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 /* ── Tagline ── */

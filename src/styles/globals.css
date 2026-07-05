@@ -20,7 +20,7 @@ body {
   font-weight: var(--font-regular);
   line-height: var(--leading-normal);
   color: var(--color-text-primary);
-  background-color: var(--color-white);
+  background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -101,15 +101,15 @@ ul, ol { list-style: none; }
 
 /* ── Focus ── */
 :focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-highlight);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
 
 /* ── Selection ── */
 ::selection {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  background-color: var(--color-highlight);   
+  color: var(--color-text-inverse);
 }
 
 /* ── Animations ── */

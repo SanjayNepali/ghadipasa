@@ -1,40 +1,44 @@
 :root {
-  /* ── Brand Palette ── */
-  --color-primary:        #b5485a;
-  --color-primary-light:  #d4788a;
-  --color-primary-dark:   #8c2d3f;
-  --color-primary-subtle: #fceef1;
+  /* ── Brand Palette — Ghadi Pasa ── */
+  --color-primary:        #7A1F2C;
+  --color-primary-light:  #9C3A46;
+  --color-primary-dark:   #4E1119;
+  --color-primary-subtle: #241014;
 
-  --color-accent:         #2d6a4f;
-  --color-accent-light:   #52b788;
-  --color-accent-dark:    #1b4332;
-  --color-accent-subtle:  #edf7f2;
+  --color-accent:         #1E2A4A;
+  --color-accent-light:   #33456F;
+  --color-accent-dark:    #101828;
+  --color-accent-subtle:  #161D2E;
 
-  --color-highlight:      #e8a838;
-  --color-highlight-subtle: #fdf4e3;
+  --color-highlight:        #D9A441;
+  --color-highlight-light:  #E8BE6C;
+  --color-highlight-dark:   #B3822F;
+  --color-highlight-subtle: #2A2214;
 
-  /* ── Neutrals ── */
+  /* ── Neutrals (dark theme) ── */
   --color-white:          #ffffff;
-  --color-offwhite:       #f9f7f8;
-  --color-surface:        #f3f0f1;
-  --color-border:         #e2dade;
-  --color-border-strong:  #c8bfc4;
+  --color-bg:             #0B0F1A;
+  --color-surface:        #131A2B;
+  --color-surface-raised: #1B2438;
+  --color-offwhite:       #F5F5F0;
+  --color-border:         #232C42;
+  --color-border-strong:  #384260;
 
-  --color-text-primary:   #14080c;
-  --color-text-secondary: #5a4550;
-  --color-text-muted:     #9c8890;
-  --color-text-disabled:  #c9bec3;
-  --color-text-inverse:   #ffffff;
+  --color-text-primary:   #F5F5F0;
+  --color-text-secondary: #ADB3C4;
+  --color-text-muted:     #767E94;
+  --color-text-disabled:  #4B5268;
+  --color-text-inverse:   #0B0F1A;
 
   /* ── Semantic ── */
-  --color-success:        #2d6a4f;
-  --color-success-bg:     #edf7f2;
-  --color-warning:        #e8a838;
-  --color-warning-bg:     #fdf4e3;
-  --color-error:          #b5485a;
-  --color-error-bg:       #fceef1;
-  --color-info:           #2d5f8a;
-  --color-info-bg:        #eef4fa;
+  --color-success:        #3FA66B;
+  --color-success-bg:     #12261C;
+  --color-warning:        #D9A441;
+  --color-warning-bg:     #2A2214;
+  --color-error:          #C23B4B;
+  --color-error-bg:       #2A1416;
+  --color-info:           #4A7FD1;
+  --color-info-bg:        #131E30;
 
   /* ── Typography ── */
   --font-display:  'Playfair Display', Georgia, serif;
@@ -85,20 +89,20 @@
   --space-24: 6rem;
   --space-32: 8rem;
 
-  /* ── Border Radius ── */
-  --radius-sm:   3px;
-  --radius-md:   6px;
-  --radius-lg:   10px;
-  --radius-xl:   14px;
-  --radius-2xl:  20px;
-  --radius-full: 9999px;
+  /* ── Border Radius — SHARP RECTANGLES ── */
+  --radius-sm:   0px;
+  --radius-md:   0px;
+  --radius-lg:   0px;
+  --radius-xl:   0px;
+  --radius-2xl:  0px;
+  --radius-full: 0px;
 
-  /* ── Shadows ── */
-  --shadow-xs: 0 1px 3px rgba(20,8,12,0.08);
-  --shadow-sm: 0 2px 8px rgba(20,8,12,0.10);
-  --shadow-md: 0 4px 20px rgba(20,8,12,0.13);
-  --shadow-lg: 0 8px 36px rgba(20,8,12,0.16);
-  --shadow-xl: 0 16px 56px rgba(20,8,12,0.20);
+  /* ── Shadows — deepened for dark background ── */
+  --shadow-xs: 0 1px 3px rgba(0,0,0,0.35);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.40);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.45);
+  --shadow-lg: 0 8px 36px rgba(0,0,0,0.50);
+  --shadow-xl: 0 16px 56px rgba(0,0,0,0.55);
 
   /* ── Transitions ── */
   --transition-fast: 140ms ease;

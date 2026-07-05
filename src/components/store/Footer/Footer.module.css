@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--color-offwhite);
+  background-color: var(--color-surface);
   border-top: 1px solid var(--color-border);
   margin-top: var(--space-24);
 }
@@ -43,7 +43,7 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-full);
-  background-color: var(--color-white);
+  background-color: var(--color-surface-raised);
   border: 1px solid var(--color-border);
   color: var(--color-text-secondary);
   font-size: var(--text-lg);
