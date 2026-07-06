@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { MAX_CART_QUANTITY, ROUTES } from "@/constants";
+import { trackEvent } from "@/lib/analytics";
 import type { CartItemWithProduct } from "@/services/cart.service";
 
 interface CartContextValue {
@@ -15,7 +16,7 @@ interface CartContextValue {
   addItem: (productId: string, quantity?: number) => Promise<void>;
   updateItem: (productId: string, quantity: number) => Promise<void>;
   removeItem: (productId: string) => Promise<void>;
-  refresh: () => Promise<void>;
+  refresh: () => Promise<{ items: CartItemWithProduct[]; itemCount: number; subtotal: number } | undefined>;
 }
 
 const CartContext = createContext<CartContextValue | undefined>(undefined);
@@ -29,8 +30,6 @@ export function CartProvider({
 }) {
   const { status } = useSession();
   const router = useRouter();
-
-  // ...rest of the file is unchanged
 
   const [items, setItems] = useState<CartItemWithProduct[]>([]);
   const [itemCount, setItemCount] = useState(initialItemCount);
@@ -46,6 +45,7 @@ export function CartProvider({
       setItems(json.data.items);
       setItemCount(json.data.itemCount);
       setSubtotal(json.data.subtotal);
+      return json.data as { items: CartItemWithProduct[]; itemCount: number; subtotal: number };
     } catch (error) {
       console.error("[CartContext] refresh failed:", error);
     }
@@ -82,7 +82,23 @@ export function CartProvider({
           return;
         }
         toast.success("Added to cart");
-        await refresh();
+        const data = await refresh();
+
+        const addedItem = data?.items.find((i) => i.productId === productId);
+        if (addedItem) {
+          trackEvent("add_to_cart", {
+            currency: "NPR",
+            value: addedItem.product.price * quantity,
+            items: [
+              {
+                item_id: productId,
+                item_name: addedItem.product.name,
+                price: addedItem.product.price,
+                quantity,
+              },
+            ],
+          });
+        }
       } catch (error) {
         console.error("[CartContext] addItem failed:", error);
         toast.error("Something went wrong.");
@@ -98,7 +114,6 @@ export function CartProvider({
       if (!requireAuth()) return;
       const clamped = Math.min(Math.max(quantity, 0), MAX_CART_QUANTITY);
 
-      // optimistic update
       setItems((prev) =>
         clamped === 0
           ? prev.filter((i) => i.productId !== productId)

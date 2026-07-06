@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import toast from "react-hot-toast";
 import { formatCurrency } from "@/utils";
+import { trackEvent } from "@/lib/analytics";
 import {
   ROUTES,
   SHIPPING_COST,
@@ -52,6 +53,19 @@ export default function CheckoutForm({ cart, addresses }: CheckoutFormProps) {
 
   const shipping = cart.subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST;
   const total = cart.subtotal + shipping;
+  useEffect(() => {
+    trackEvent("begin_checkout", {
+      currency: "NPR",
+      value: total,
+      items: cart.items.map((item) => ({
+        item_id: item.productId,
+        item_name: item.product.name,
+        price: item.product.price,
+        quantity: item.quantity,
+      })),
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const placeCodOrder = async () => {
     try {
