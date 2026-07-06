@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     title:       APP_NAME,
     description: APP_TAGLINE,
   },
+  verification: {
+    google: "843BYOThOi7B8bAZWoxX3CSrrgeocwpTbcwV75bj6U0",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
