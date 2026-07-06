@@ -15,14 +15,14 @@
   font-weight: var(--font-bold);
   letter-spacing: var(--tracking-widest);
   text-transform: uppercase;
-  color: var(--color-primary);
+  color: var(--color-walnut);
 }
 
 .title {
   font-family: var(--font-display);
   font-size: var(--text-4xl);
   font-weight: var(--font-black);
-  color: var(--color-text-primary);
+  color: var(--color-navy);
   letter-spacing: var(--tracking-tight);
   margin: 0;
 }
@@ -34,15 +34,11 @@
 }
 
 @media (min-width: 640px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (min-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 .empty {

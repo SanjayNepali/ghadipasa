@@ -19,7 +19,7 @@ interface HeaderProps {
 const NAV_LINKS = [
   { label: "Shop", href: ROUTES.SHOP },
   { label: "Categories", href: ROUTES.CATEGORIES },
-  { label: "Gift Finder", href: ROUTES.GIFT_FINDER },
+  { label: "Watch Finder", href: ROUTES.WATCH_FINDER },
   { label: "About", href: ROUTES.ABOUT },
 ];
 
@@ -30,7 +30,7 @@ export default function Header({
 }: HeaderProps) {
   const pathname = usePathname();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  
+  const [searchOpen, setSearchOpen] = useState(false);
 
   const showClosedBanner = !isStoreOpen;
   const showAnnouncement = isStoreOpen && !!announcementBar;
@@ -75,13 +75,26 @@ export default function Header({
             ))}
           </nav>
 
-          <div className={styles.searchInline}>
-            <SearchBar />
-          </div>
-
           <div className={styles.actions}>
+            <div
+              className={`${styles.searchWrap} ${
+                searchOpen ? styles.searchWrapOpen : ""
+              }`}
+            >
+              <SearchBar />
+            </div>
+
+            <button
+              type="button"
+              className={styles.searchToggle}
+              aria-label={searchOpen ? "Close search" : "Open search"}
+              onClick={() => setSearchOpen((prev) => !prev)}
+            >
+              <i className={`bx ${searchOpen ? "bx-x" : "bx-search"}`} />
+            </button>
+
             <Link href={ROUTES.CART} className={styles.cartLink} aria-label="Cart">
-              <i className="bx bx-cart" />
+              <i className="bx bx-shopping-bag" />
               {cartCount > 0 && (
                 <span className={styles.cartBadge}>
                   {cartCount > 9 ? "9+" : cartCount}

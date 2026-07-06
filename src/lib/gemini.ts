@@ -1,19 +1,19 @@
 const GEMINI_MODEL = "gemini-3.5-flash";
 const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
-export interface GiftPick {
+export interface WatchPick {
   productId: string;
   reason: string;
 }
 
 export type GeminiRecommendationResult =
-  | { success: true; picks: GiftPick[] }
+  | { success: true; picks: WatchPick[] }
   | { success: false; error: string };
 
 const UNAVAILABLE_ERROR =
-  "The Gift Finder is temporarily unavailable. Please try again shortly.";
+  "The Watch Finder is temporarily unavailable. Please try again shortly.";
 
-export async function getGiftRecommendations(
+export async function getWatchRecommendations(
   description: string,
   catalogText: string
 ): Promise<GeminiRecommendationResult> {
@@ -22,13 +22,13 @@ export async function getGiftRecommendations(
   if (!apiKey) {
     return {
       success: false,
-      error: "Gift Finder isn't available yet. Please check back soon.",
+      error: "Watch Finder isn't available yet. Please check back soon.",
     };
   }
 
-  const prompt = `You are a gift recommendation assistant for Nimki Gift Shop, a Nepali handmade gift store.
+  const prompt = `You are a watch and sunglasses recommendation assistant for Ghadi Pasa, a Nepali retailer of watches and sunglasses.
 
-A customer described what they're looking for:
+A customer described what they're looking for (occasion, budget, style, or use case):
 "${description}"
 
 Below is the current in-stock product catalog. Only recommend products from this list by their exact id — never invent a product or productId that isn't listed here.
@@ -85,7 +85,7 @@ Pick up to 6 products that best match the customer's description. If nothing in 
     }
 
     const parsed = JSON.parse(text);
-    const picks: GiftPick[] = Array.isArray(parsed?.picks) ? parsed.picks : [];
+    const picks: WatchPick[] = Array.isArray(parsed?.picks) ? parsed.picks : [];
 
     return { success: true, picks };
   } catch (err) {

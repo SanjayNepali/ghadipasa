@@ -1,130 +1,98 @@
 :root {
   /* ── Brand Palette — Ghadi Pasa ── */
-  --color-primary:        #7A1F2C;
-  --color-primary-light:  #9C3A46;
-  --color-primary-dark:   #4E1119;
-  --color-primary-subtle: #241014;
+  --color-navy:         #0A2947;
+  --color-navy-light:   #123A61;
+  --color-navy-lighter: #1B4A7A;
+  --color-navy-dark:    #071D33;
 
-  --color-accent:         #1E2A4A;
-  --color-accent-light:   #33456F;
-  --color-accent-dark:    #101828;
-  --color-accent-subtle:  #161D2E;
+  --color-ivory:        #F3E4C9;
+  --color-ivory-soft:   #FAF3E7;  /* lighter cream tint, for subtle alt sections */
+  --color-ivory-dim:    #E8D5AF;  /* muted ivory, for secondary text on dark */
 
-  --color-highlight:        #D9A441;
-  --color-highlight-light:  #E8BE6C;
-  --color-highlight-dark:   #B3822F;
-  --color-highlight-subtle: #2A2214;
+  --color-stone:        #D0CCB4;
+  --color-stone-dark:   #B6B096;
 
-  /* ── Neutrals (dark theme) ── */
-  --color-white:          #ffffff;
-  --color-bg:             #0B0F1A;
-  --color-surface:        #131A2B;
-  --color-surface-raised: #1B2438;
-  --color-offwhite:       #F5F5F0;
-  --color-border:         #232C42;
-  --color-border-strong:  #384260;
+  --color-walnut:        #8B5E3C;
+  --color-walnut-light:  #A3744F;
+  --color-walnut-dark:   #6F4A2E;
 
-  --color-text-primary:   #F5F5F0;
-  --color-text-secondary: #ADB3C4;
-  --color-text-muted:     #767E94;
-  --color-text-disabled:  #4B5268;
-  --color-text-inverse:   #0B0F1A;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
 
-  /* ── Semantic ── */
-  --color-success:        #3FA66B;
-  --color-success-bg:     #12261C;
-  --color-warning:        #D9A441;
-  --color-warning-bg:     #2A2214;
-  --color-error:          #C23B4B;
-  --color-error-bg:       #2A1416;
-  --color-info:           #4A7FD1;
-  --color-info-bg:        #131E30;
+  /* ── Semantic surfaces — LIGHT DOMINANT ── */
+  --color-bg:          var(--color-white);   /* primary page background */
+  --color-bg-soft:     var(--color-ivory-soft); /* alternating light sections */
+  --color-bg-dark:     var(--color-navy);    /* hero overlays, footer-dark, admin sidebar */
+
+  --color-surface:      var(--color-white);
+  --color-surface-soft: var(--color-ivory-soft);
+  --color-surface-dark: var(--color-navy-light);
+
+  --color-border:        rgba(10, 41, 71, 0.12);   /* hairline on light bg */
+  --color-border-strong: var(--color-stone-dark);
+  --color-border-dark:   rgba(243, 228, 201, 0.15); /* hairline on dark sections */
+
+  /* ── Text ── */
+  --color-text-primary:   var(--color-navy);
+  --color-text-secondary: rgba(10, 41, 71, 0.65);
+  --color-text-muted:     rgba(10, 41, 71, 0.45);
+  --color-text-disabled:  rgba(10, 41, 71, 0.28);
+
+  --color-text-inverse:        var(--color-ivory);  /* text on navy/dark sections */
+  --color-text-inverse-muted:  rgba(243, 228, 201, 0.72);
+
+  /* ── Semantic states ── */
+  --color-success:    #4F7A45;
+  --color-success-bg: rgba(79, 122, 69, 0.10);
+  --color-error:      #A0472F;
+  --color-error-bg:   rgba(160, 71, 47, 0.10);
+  --color-warning:    var(--color-walnut);
+  --color-warning-bg: rgba(139, 94, 60, 0.10);
 
   /* ── Typography ── */
-  --font-display:  'Playfair Display', Georgia, serif;
-  --font-body:     'Inter', system-ui, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Manrope', system-ui, sans-serif;
 
-  --text-xs:   0.75rem;
-  --text-sm:   0.875rem;
-  --text-base: 1rem;
-  --text-md:   1.125rem;
-  --text-lg:   1.25rem;
-  --text-xl:   1.5rem;
-  --text-2xl:  1.875rem;
-  --text-3xl:  2.25rem;
-  --text-4xl:  3rem;
-  --text-5xl:  3.75rem;
-  --text-6xl:  4.5rem;
+  --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem; --text-md: 1.125rem;
+  --text-lg: 1.25rem; --text-xl: 1.5rem; --text-2xl: 1.875rem; --text-3xl: 2.25rem;
+  --text-4xl: 3rem; --text-5xl: 3.75rem; --text-6xl: 4.5rem;
 
-  --font-light:    300;
-  --font-regular:  400;
-  --font-medium:   500;
-  --font-semibold: 600;
-  --font-bold:     700;
-  --font-black:    900;
+  --font-light: 300; --font-regular: 400; --font-medium: 500;
+  --font-semibold: 600; --font-bold: 700; --font-black: 900;
 
-  --leading-tight:   1.15;
-  --leading-snug:    1.3;
-  --leading-normal:  1.5;
-  --leading-relaxed: 1.65;
-
-  --tracking-tight:   -0.03em;
-  --tracking-normal:   0em;
-  --tracking-wide:     0.05em;
-  --tracking-wider:    0.1em;
-  --tracking-widest:   0.16em;
+  --leading-tight: 1.15; --leading-snug: 1.3; --leading-normal: 1.5; --leading-relaxed: 1.65;
+  --tracking-tight: -0.02em; --tracking-normal: 0em; --tracking-wide: 0.04em;
+  --tracking-wider: 0.08em; --tracking-widest: 0.14em;
 
   /* ── Spacing ── */
-  --space-1:  0.25rem;
-  --space-2:  0.5rem;
-  --space-3:  0.75rem;
-  --space-4:  1rem;
-  --space-5:  1.25rem;
-  --space-6:  1.5rem;
-  --space-8:  2rem;
-  --space-10: 2.5rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
-  --space-20: 5rem;
-  --space-24: 6rem;
-  --space-32: 8rem;
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
+  --space-12: 3rem; --space-16: 4rem; --space-20: 5rem; --space-24: 6rem; --space-32: 8rem;
 
-  /* ── Border Radius — SHARP RECTANGLES ── */
-  --radius-sm:   0px;
-  --radius-md:   0px;
-  --radius-lg:   0px;
-  --radius-xl:   0px;
-  --radius-2xl:  0px;
-  --radius-full: 0px;
+  /* ── Border Radius ── */
+  --radius-sm: 2px; --radius-md: 4px; --radius-lg: 6px;
+  --radius-xl: 8px; --radius-2xl: 10px;
+  --radius-full: 999px;   /* buttons, pills, badges, avatars */
+  --radius-image: 0px;    /* product/hero photography — sharp, uncropped edges */
 
-  /* ── Shadows — deepened for dark background ── */
-  --shadow-xs: 0 1px 3px rgba(0,0,0,0.35);
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.40);
-  --shadow-md: 0 4px 20px rgba(0,0,0,0.45);
-  --shadow-lg: 0 8px 36px rgba(0,0,0,0.50);
-  --shadow-xl: 0 16px 56px rgba(0,0,0,0.55);
+  /* ── Shadows — very subtle, light-bg calibrated ── */
+  --shadow-xs: 0 1px 2px rgba(10, 41, 71, 0.06);
+  --shadow-sm: 0 1px 3px rgba(10, 41, 71, 0.08);
+  --shadow-md: 0 2px 8px rgba(10, 41, 71, 0.10);
+  --shadow-lg: 0 4px 16px rgba(10, 41, 71, 0.12);
+  --shadow-xl: 0 8px 24px rgba(10, 41, 71, 0.14);
 
   /* ── Transitions ── */
   --transition-fast: 140ms ease;
-  --transition-base: 240ms ease;
-  --transition-slow: 380ms ease;
+  --transition-base: 220ms ease;
+  --transition-slow: 340ms ease;
 
   /* ── Layout ── */
-  --container-sm:  640px;
-  --container-md:  768px;
-  --container-lg:  1024px;
-  --container-xl:  1280px;
-  --container-2xl: 1440px;
+  --container-sm: 640px; --container-md: 768px; --container-lg: 1024px;
+  --container-xl: 1280px; --container-2xl: 1440px;
+  --header-height: 72px;
+  --sidebar-width: 248px;
 
-  --header-height: 68px;
-  --sidebar-width: 256px;
-
-  /* ── Z-index ── */
-  --z-base:     0;
-  --z-above:    10;
-  --z-dropdown: 100;
-  --z-sticky:   200;
-  --z-overlay:  300;
-  --z-modal:    400;
-  --z-toast:    500;
+  --z-base: 0; --z-above: 10; --z-dropdown: 100; --z-sticky: 200;
+  --z-overlay: 300; --z-modal: 400; --z-toast: 500;
 }

@@ -25,7 +25,6 @@ export default function Newsletter() {
     setError("");
     setLoading(true);
 
-    // TODO: connect to Resend newsletter list in a future ticket
     setTimeout(() => {
       setLoading(false);
       setEmail("");
@@ -37,12 +36,12 @@ export default function Newsletter() {
     <section className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.badge}>
-          <i className="bx bx-gift" />
+          <i className="bx bx-time-five" />
         </div>
         <h2 className={styles.heading}>Be the first to know</h2>
         <p className={styles.sub}>
-          New collections, seasonal gift guides, and exclusive offers — straight
-          to your inbox. No noise, just things worth knowing.
+          New arrivals, restocks, and exclusive offers — straight to your
+          inbox. No noise, just things worth knowing.
         </p>
 
         <div className={styles.formRow}>

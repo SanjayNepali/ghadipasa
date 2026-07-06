@@ -22,7 +22,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
           />
         ) : (
           <div className={styles.fallback}>
-            <i className="bx bx-gift" />
+            <i className="bx bx-watch" />
           </div>
         )}
       </div>

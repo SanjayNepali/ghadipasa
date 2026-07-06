@@ -32,16 +32,15 @@
 
 .breadcrumbs a {
   color: var(--color-text-secondary);
-  text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 .breadcrumbs a:hover {
-  color: var(--color-primary);
+  color: var(--color-walnut);
 }
 
 .breadcrumbs li[aria-current="page"] {
-  color: var(--color-text-primary);
+  color: var(--color-navy);
   font-weight: var(--font-medium);
 }
 
@@ -57,14 +56,14 @@
   font-weight: var(--font-bold);
   letter-spacing: var(--tracking-widest);
   text-transform: uppercase;
-  color: var(--color-primary);
+  color: var(--color-walnut);
 }
 
 .title {
   font-family: var(--font-display);
   font-size: var(--text-4xl);
   font-weight: var(--font-black);
-  color: var(--color-text-primary);
+  color: var(--color-navy);
   letter-spacing: var(--tracking-tight);
   margin: 0;
 }

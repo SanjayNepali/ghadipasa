@@ -15,12 +15,6 @@ export default function Footer() {
             <a href={SOCIAL_LINKS.INSTAGRAM} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <i className="bx bxl-instagram" />
             </a>
-            <a href={SOCIAL_LINKS.FACEBOOK} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <i className="bx bxl-facebook" />
-            </a>
-            <a href={SOCIAL_LINKS.PINTEREST} target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
-              <i className="bx bxl-pinterest" />
-            </a>
           </div>
         </div>
 

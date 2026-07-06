@@ -1,18 +1,14 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(20, 8, 12, 0.45);
+  background-color: rgba(10, 41, 71, 0.45);
   z-index: var(--z-overlay);
   animation: overlayFadeIn 0.2s ease both;
 }
 
 @keyframes overlayFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .drawer {
@@ -22,21 +18,18 @@
   bottom: 0;
   width: min(320px, 85vw);
   background-color: var(--color-white);
+  border-left: 1px solid var(--color-border);
   box-shadow: var(--shadow-xl);
   display: flex;
   flex-direction: column;
   padding: var(--space-6);
-  animation: drawerSlideIn 0.25s ease both;
+  animation: drawerSlideIn 0.22s ease both;
   overflow-y: auto;
 }
 
 @keyframes drawerSlideIn {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
 }
 
 .drawerHeader {
@@ -50,7 +43,7 @@
   font-family: var(--font-display);
   font-size: var(--text-xl);
   font-weight: var(--font-bold);
-  color: var(--color-text-primary);
+  color: var(--color-navy);
 }
 
 .closeBtn {
@@ -68,7 +61,7 @@
   padding: var(--space-3) var(--space-2);
   font-size: var(--text-lg);
   font-weight: var(--font-medium);
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -77,12 +70,12 @@
 }
 
 .drawerLink:hover {
-  background-color: var(--color-primary-subtle);
-  color: var(--color-primary);
+  background-color: var(--color-bg-soft);
+  color: var(--color-walnut);
 }
 
 .drawerLinkActive {
-  color: var(--color-primary);
+  color: var(--color-walnut);
 }
 
 .drawerDivider {
@@ -122,20 +115,26 @@
 .drawerLoginBtn {
   text-align: center;
   padding: var(--space-3);
-  border: 1.5px solid var(--color-border-strong);
+  border: 1.5px solid var(--color-navy);
   border-radius: var(--radius-full);
   font-weight: var(--font-semibold);
-  color: var(--color-text-primary);
+  color: var(--color-navy);
 }
 
 .drawerRegisterBtn {
   text-align: center;
   padding: var(--space-3);
-  background-color: var(--color-primary);
-  color: var(--color-text-inverse);
+  background-color: var(--color-walnut);
+  color: var(--color-white);
   border-radius: var(--radius-full);
-  font-weight: var(--font-semibold);
+  font-weight: var(--font-bold);
+  transition: background-color var(--transition-fast);
 }
+
+.drawerRegisterBtn:hover {
+  background-color: var(--color-walnut-light);
+}
+
 .drawerSearch {
   margin-bottom: var(--space-6);
 }

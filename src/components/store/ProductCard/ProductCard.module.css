@@ -3,26 +3,23 @@
   flex-direction: column;
   background: var(--color-white);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: transform var(--transition-base), border-color var(--transition-base),
-    box-shadow var(--transition-base);
+  transition: box-shadow var(--transition-base);
   text-decoration: none;
   color: inherit;
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  border-color: var(--color-border-strong);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
 }
 
 .imageWrapper {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: var(--color-surface);
+  background: var(--color-bg-soft);
   overflow: hidden;
+  border-radius: var(--radius-image);
 }
 
 .image {
@@ -33,30 +30,28 @@
 }
 
 .card:hover .image {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 .discountBadge {
   position: absolute;
   top: var(--space-3);
   left: var(--space-3);
-  background: var(--color-primary-subtle);
-  border: 1.5px solid var(--color-primary-light);
-  color: var(--color-primary);
+  background: var(--color-navy);
+  color: var(--color-ivory);
   font-size: var(--text-xs);
   font-weight: var(--font-bold);
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-full);
-  letter-spacing: var(--tracking-wide);
 }
 
 .lowStockBadge {
   position: absolute;
   top: var(--space-3);
   right: var(--space-3);
-  background: var(--color-highlight-subtle);
-  border: 1.5px solid var(--color-highlight);
-  color: var(--color-text-primary);
+  background: var(--color-white);
+  border: 1px solid var(--color-walnut);
+  color: var(--color-walnut);
   font-size: var(--text-xs);
   font-weight: var(--font-semibold);
   padding: var(--space-1) var(--space-3);
@@ -67,8 +62,8 @@
   position: absolute;
   top: var(--space-3);
   right: var(--space-3);
-  background: var(--color-surface);
-  border: 1.5px solid var(--color-border-strong);
+  background: var(--color-white);
+  border: 1px solid var(--color-border-strong);
   color: var(--color-text-muted);
   font-size: var(--text-xs);
   font-weight: var(--font-semibold);
@@ -86,8 +81,8 @@
 
 .category {
   font-size: var(--text-xs);
-  font-weight: var(--font-medium);
-  color: var(--color-accent);
+  font-weight: var(--font-semibold);
+  color: var(--color-walnut);
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
 }
@@ -95,8 +90,8 @@
 .name {
   font-family: var(--font-display);
   font-size: var(--text-md);
-  font-weight: var(--font-semibold);
-  color: var(--color-text-primary);
+  font-weight: var(--font-bold);
+  color: var(--color-navy);
   line-height: var(--leading-tight);
   margin: 0;
   display: -webkit-box;
@@ -113,15 +108,11 @@
 }
 
 .stars {
-  color: var(--color-highlight);
+  color: var(--color-walnut);
   letter-spacing: 0.05em;
 }
 
-.reviewCount {
-  color: var(--color-text-muted);
-  font-size: var(--text-xs);
-}
-
+.reviewCount,
 .noReviews {
   color: var(--color-text-muted);
   font-size: var(--text-xs);
@@ -137,7 +128,7 @@
 .currentPrice {
   font-size: var(--text-lg);
   font-weight: var(--font-bold);
-  color: var(--color-text-primary);
+  color: var(--color-navy);
 }
 
 .comparePrice {
@@ -154,22 +145,21 @@
   width: 100%;
   margin-top: var(--space-2);
   padding: var(--space-3) var(--space-4);
-  background: var(--color-primary);
-  color: var(--color-text-inverse);
+  background-color: var(--color-walnut);
+  color: var(--color-white);
   font-size: var(--text-sm);
   font-weight: var(--font-semibold);
   border-radius: var(--radius-full);
-  transition: background var(--transition-base), opacity var(--transition-base);
-  letter-spacing: var(--tracking-wide);
+  transition: background-color var(--transition-base);
 }
 
 .addToCartBtn:hover:not(:disabled) {
-  background: var(--color-primary-dark);
+  background-color: var(--color-walnut-light);
 }
 
 .addToCartBtn:disabled {
-  background: var(--color-text-disabled);
-  opacity: 1;
+  background-color: var(--color-stone);
+  color: var(--color-text-muted);
   cursor: not-allowed;
 }
 

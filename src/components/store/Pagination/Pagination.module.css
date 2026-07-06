@@ -25,8 +25,8 @@
 
 .arrow:hover:not(:disabled),
 .pageBtn:hover:not(.active) {
-  background: var(--color-accent-subtle);
-  color: var(--color-text-primary);
+  background: var(--color-bg-soft);
+  color: var(--color-navy);
 }
 
 .arrow:disabled {
@@ -35,8 +35,8 @@
 }
 
 .pageBtn.active {
-  background: var(--color-primary);
-  color: var(--color-text-inverse);
+  background: var(--color-navy);
+  color: var(--color-white);
   font-weight: var(--font-bold);
 }
 

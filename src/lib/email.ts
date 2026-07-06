@@ -1,8 +1,9 @@
 // src/lib/email.ts
-// Transactional email utility for Nimki Gift Shop.
+// Transactional email utility for Ghadi Pasa.
 // Sends via Resend when RESEND_API_KEY is set; falls back to console in dev.
 
 import { Resend } from "resend";
+import { APP_NAME } from "@/constants";
 import {
   verificationEmailTemplate,
   passwordResetTemplate,
@@ -35,11 +36,9 @@ async function sendEmail(opts: {
   if (resend) {
     const { error } = await resend.emails.send({ from: FROM, ...opts });
     if (error) {
-      // Log but don't throw — a failed email should never break the user flow
       console.error("[EMAIL] Resend error:", error);
     }
   } else {
-    // Development fallback — full HTML logged to terminal
     console.log("\n📧 [EMAIL — DEV FALLBACK]");
     console.log(`  To:      ${opts.to}`);
     console.log(`  Subject: ${opts.subject}`);
@@ -58,7 +57,7 @@ export async function sendVerificationEmail(
   const link = `${APP_URL}/verify-email?token=${token}`;
   await sendEmail({
     to,
-    subject: "Verify your email — Nimki Gift Shop",
+    subject: `Verify your email — ${APP_NAME}`,
     html: verificationEmailTemplate(name, link),
   });
 }
@@ -73,7 +72,7 @@ export async function sendPasswordResetEmail(
   const link = `${APP_URL}/reset-password?token=${token}`;
   await sendEmail({
     to,
-    subject: "Reset your password — Nimki Gift Shop",
+    subject: `Reset your password — ${APP_NAME}`,
     html: passwordResetTemplate(name, link),
   });
 }
@@ -87,7 +86,7 @@ export async function sendOrderConfirmationEmail(
 ): Promise<void> {
   await sendEmail({
     to,
-    subject: `Order confirmed #${order.orderNumber} — Nimki Gift Shop`,
+    subject: `Order confirmed #${order.orderNumber} — ${APP_NAME}`,
     html: orderConfirmationTemplate(name, order),
   });
 }

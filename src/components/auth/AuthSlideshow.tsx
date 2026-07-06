@@ -6,20 +6,16 @@ import { APP_NAME, APP_TAGLINE } from "@/constants";
 
 const SLIDES = [
   {
-    url: "/images/image.png",
-    label: "Handcrafted with love",
+    url: "/images/auth.png",
+    label: "Precision in every detail",
   },
   {
-    url: "/images/image1.png",
-    label: "Gifts that tell a story",
+    url: "/images/auth1.png",
+    label: "Timeless craftsmanship",
   },
   {
-    url: "/images/image2.png",
-    label: "Every detail matters",
-  },
-  {
-    url: "/images/image3.png",
-    label: "Made for the people you love",
+    url: "/images/auth2.png",
+    label: "Built to last a lifetime",
   },
 ];
 
@@ -29,7 +25,7 @@ export default function AuthSlideshow() {
   useEffect(() => {
     const id = setInterval(() => {
       setCurrent((prev) => (prev + 1) % SLIDES.length);
-    }, 4000);
+    }, 5000);
     return () => clearInterval(id);
   }, []);
 
@@ -46,11 +42,13 @@ export default function AuthSlideshow() {
 
       {/* Overlay */}
       <div className={styles.overlay} />
+      <div className={styles.vignette} />
 
       {/* Brand */}
       <div className={styles.brand}>
         <p className={styles.brandEyebrow}>Welcome to</p>
         <h1 className={styles.brandName}>{APP_NAME}</h1>
+        <span className={styles.brandRule} />
         <p className={styles.brandTagline}>{APP_TAGLINE}</p>
       </div>
 

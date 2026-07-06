@@ -25,11 +25,11 @@
 }
 
 .dropdown:hover {
-  border-color: var(--color-accent-light);
+  border-color: var(--color-walnut);
 }
 
 .dropdown:focus-within {
-  border-color: var(--color-primary);
+  border-color: var(--color-walnut);
 }
 
 .select {

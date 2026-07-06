@@ -7,26 +7,26 @@
 .loginLink {
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   transition: color var(--transition-fast);
 }
 
 .loginLink:hover {
-  color: var(--color-primary);
+  color: var(--color-walnut);
 }
 
 .registerBtn {
   font-size: var(--text-sm);
   font-weight: var(--font-semibold);
-  color: var(--color-text-inverse);
-  background-color: var(--color-primary);
+  color: var(--color-white);
+  background-color: var(--color-walnut);
   padding: var(--space-2) var(--space-5);
   border-radius: var(--radius-full);
   transition: background-color var(--transition-fast);
 }
 
 .registerBtn:hover {
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-walnut-light);
 }
 
 .skeleton {
@@ -35,21 +35,17 @@
   border-radius: var(--radius-full);
   background: linear-gradient(
     90deg,
-    var(--color-surface) 25%,
+    var(--color-bg-soft) 25%,
     var(--color-border) 50%,
-    var(--color-surface) 75%
+    var(--color-bg-soft) 75%
   );
   background-size: 200% 100%;
   animation: userMenuShimmer 1.4s infinite;
 }
 
 @keyframes userMenuShimmer {
-  from {
-    background-position: -200% 0;
-  }
-  to {
-    background-position: 200% 0;
-  }
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
 }
 
 .userMenu {
@@ -66,14 +62,13 @@
   width: 36px;
   height: 36px;
   border-radius: var(--radius-full);
-  background-color: var(--color-primary-subtle);
-  color: var(--color-primary);
+  background-color: var(--color-navy);
+  color: var(--color-ivory);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: var(--font-bold);
   font-size: var(--text-base);
-  border: 1.5px solid var(--color-primary-light);
 }
 
 .chevron {
@@ -101,14 +96,8 @@
 }
 
 @keyframes dropdownFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .dropdownHeader {
@@ -134,7 +123,7 @@
   gap: var(--space-3);
   padding: var(--space-3) var(--space-4);
   font-size: var(--text-sm);
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   border-radius: var(--radius-md);
   transition: background-color var(--transition-fast), color var(--transition-fast);
 }
@@ -145,12 +134,12 @@
 }
 
 .dropdownLink:hover {
-  background-color: var(--color-primary-subtle);
-  color: var(--color-primary);
+  background-color: var(--color-bg-soft);
+  color: var(--color-walnut);
 }
 
 .dropdownLink:hover i {
-  color: var(--color-primary);
+  color: var(--color-walnut);
 }
 
 .dropdownLogout {

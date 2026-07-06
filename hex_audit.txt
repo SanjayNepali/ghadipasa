@@ -1,2 +1,0 @@
-src\components\store\Newsletter\Newsletter.module.css:94:  border-color: var(--color-error, #dc2626);
-src\components\store\Newsletter\Newsletter.module.css:152:  color: var(--color-error, #dc2626);

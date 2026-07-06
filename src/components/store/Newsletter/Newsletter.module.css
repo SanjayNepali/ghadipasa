@@ -1,6 +1,6 @@
 .section {
   padding: var(--space-20) 0;
-  background-color: var(--color-surface);
+  background-color: var(--color-white);
   border-top: 1px solid var(--color-border);
 }
 
@@ -15,16 +15,16 @@
   gap: var(--space-4);
 }
 
-/* ── Badge icon ── */
 .badge {
   width: 52px;
   height: 52px;
   border-radius: var(--radius-full);
-  background-color: rgba(181, 72, 90, 0.1);
+  background-color: var(--color-bg-soft);
+  border: 1px solid var(--color-border);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-primary);
+  color: var(--color-walnut);
   font-size: 1.5rem;
   margin-bottom: var(--space-2);
 }
@@ -32,19 +32,18 @@
 .heading {
   font-family: var(--font-display);
   font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: var(--font-bold);
-  color: var(--color-text-primary);
+  font-weight: var(--font-black);
+  color: var(--color-navy);
   letter-spacing: var(--tracking-tight);
 }
 
 .sub {
   font-size: var(--text-base);
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   line-height: 1.7;
   max-width: 460px;
 }
 
-/* ── Form row ── */
 .formRow {
   display: flex;
   gap: var(--space-3);
@@ -61,7 +60,7 @@
 
 .inputIcon {
   position: absolute;
-  left: var(--space-4);
+  left: var(--space-5);
   font-size: 1.1rem;
   color: var(--color-text-muted);
   pointer-events: none;
@@ -72,12 +71,11 @@
   height: 50px;
   padding: 0 var(--space-4) 0 var(--space-10);
   border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
   font-size: var(--text-sm);
   color: var(--color-text-primary);
-  background-color: var(--color-white);
-  transition: border-color var(--transition-fast),
-              box-shadow var(--transition-fast);
+  background-color: var(--color-bg-soft);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .input::placeholder {
@@ -86,12 +84,12 @@
 
 .input:focus {
   outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(181, 72, 90, 0.12);
+  border-color: var(--color-walnut);
+  box-shadow: 0 0 0 3px rgba(139, 94, 60, 0.12);
 }
 
 .input.inputError {
-  border-color: var(--color-error, #dc2626);
+  border-color: var(--color-error);
 }
 
 .input:disabled {
@@ -102,12 +100,11 @@
 .btn {
   height: 50px;
   padding: 0 var(--space-7);
-  background-color: var(--color-primary);
+  background-color: var(--color-walnut);
   color: var(--color-white);
   font-size: var(--text-sm);
   font-weight: var(--font-bold);
-  letter-spacing: var(--tracking-wide);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   gap: var(--space-2);
@@ -117,7 +114,7 @@
 }
 
 .btn:hover:not(:disabled) {
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-walnut-light);
 }
 
 .btn:disabled {
@@ -129,7 +126,6 @@
   font-size: 1.15rem;
 }
 
-/* ── Spinner ── */
 .spinner {
   width: 18px;
   height: 18px;
@@ -139,17 +135,12 @@
   animation: spin 0.7s linear infinite;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-/* ── Error ── */
 .errorMsg {
   display: flex;
   align-items: center;
   gap: var(--space-2);
   font-size: var(--text-xs);
-  color: var(--color-error, #dc2626);
+  color: var(--color-error);
   font-weight: var(--font-medium);
 }
 
@@ -158,29 +149,15 @@
   flex-shrink: 0;
 }
 
-/* ── Note ── */
 .note {
   font-size: var(--text-xs);
   color: var(--color-text-muted);
   margin-top: var(--space-1);
 }
 
-/* ── Responsive ── */
 @media (max-width: 540px) {
-  .section {
-    padding: var(--space-12) 0;
-  }
-
-  .inner {
-    padding: 0 var(--space-5);
-  }
-
-  .formRow {
-    flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
+  .section { padding: var(--space-12) 0; }
+  .inner { padding: 0 var(--space-5); }
+  .formRow { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
 }

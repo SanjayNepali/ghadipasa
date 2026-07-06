@@ -19,7 +19,7 @@ export const ROUTES = {
   ACCOUNT_PROFILE:"/account/profile",
   ACCOUNT_ADDRESSES: "/account/addresses",
   SEARCH: "/search",
-  GIFT_FINDER: "/gift-finder",
+  WATCH_FINDER: "/watch-finder",
 
   // Auth
   LOGIN:          "/login",
@@ -77,8 +77,6 @@ export const LOW_STOCK_THRESHOLD = 5;
 
 export const SOCIAL_LINKS = {
   INSTAGRAM: "https://www.instagram.com/ghadipasa.np/",
-  FACEBOOK: "#",
-  PINTEREST: "#",
 } as const;
 
 export const CONTACT = {

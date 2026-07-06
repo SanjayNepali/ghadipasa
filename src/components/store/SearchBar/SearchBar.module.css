@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  background: var(--color-surface);
+  background-color: var(--color-bg-soft);
   border: 1.5px solid var(--color-border);
   border-radius: var(--radius-full);
   padding: var(--space-2) var(--space-4);
@@ -21,7 +21,7 @@
 }
 
 .inputBox:focus-within {
-  border-color: var(--color-primary);
+  border-color: var(--color-walnut);
 }
 
 .inputBox i.bx-search {
@@ -57,7 +57,7 @@
   top: calc(100% + var(--space-2));
   left: 0;
   right: 0;
-  background: var(--color-white);
+  background-color: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
@@ -67,14 +67,8 @@
 }
 
 @keyframes panelFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .statusRow {
@@ -98,14 +92,14 @@
   align-items: center;
   gap: var(--space-3);
   padding: var(--space-2);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   text-align: left;
   transition: background-color var(--transition-fast);
 }
 
 .resultRow:hover,
 .resultRowActive {
-  background-color: var(--color-primary-subtle);
+  background-color: var(--color-bg-soft);
 }
 
 .resultThumb {
@@ -113,8 +107,8 @@
   width: 44px;
   height: 44px;
   flex-shrink: 0;
-  border-radius: var(--radius-md);
-  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+  background: var(--color-stone);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,7 +117,7 @@
 
 .resultThumb i {
   font-size: var(--text-xl);
-  color: var(--color-primary-light);
+  color: var(--color-navy);
 }
 
 .resultImage {
@@ -154,7 +148,7 @@
 .resultPrice {
   font-size: var(--text-sm);
   font-weight: var(--font-semibold);
-  color: var(--color-primary);
+  color: var(--color-walnut);
   flex-shrink: 0;
 }
 
@@ -164,11 +158,11 @@
   border-top: 1px solid var(--color-border);
   font-size: var(--text-sm);
   font-weight: var(--font-semibold);
-  color: var(--color-primary);
+  color: var(--color-walnut);
   text-align: center;
   transition: background-color var(--transition-fast);
 }
 
 .viewAllBtn:hover {
-  background-color: var(--color-primary-subtle);
+  background-color: var(--color-bg-soft);
 }

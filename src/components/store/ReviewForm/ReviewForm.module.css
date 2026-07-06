@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: var(--space-3);
   padding: var(--space-6);
-  background: var(--color-surface);
+  background: var(--color-white);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
 }
@@ -11,8 +11,8 @@
 .title {
   font-family: var(--font-display);
   font-size: var(--text-lg);
-  font-weight: var(--font-semibold);
-  color: var(--color-text-primary);
+  font-weight: var(--font-bold);
+  color: var(--color-navy);
   margin: 0;
 }
 
@@ -27,7 +27,7 @@
   cursor: pointer;
   padding: var(--space-1);
   font-size: var(--text-2xl);
-  color: var(--color-highlight);
+  color: var(--color-walnut);
   line-height: 1;
   transition: transform var(--transition-fast);
 }
@@ -52,7 +52,7 @@
 
 .textarea:focus {
   outline: none;
-  border-color: var(--color-primary);
+  border-color: var(--color-walnut);
 }
 
 .charCount {
@@ -69,17 +69,16 @@
 
 .submitBtn {
   padding: var(--space-3) var(--space-6);
-  background: var(--color-primary);
-  color: var(--color-text-inverse);
+  background-color: var(--color-walnut);
+  color: var(--color-white);
   font-size: var(--text-sm);
   font-weight: var(--font-semibold);
   border-radius: var(--radius-full);
-  transition: background var(--transition-base);
-  letter-spacing: var(--tracking-wide);
+  transition: background-color var(--transition-base);
 }
 
 .submitBtn:hover:not(:disabled) {
-  background: var(--color-primary-dark);
+  background-color: var(--color-walnut-light);
 }
 
 .submitBtn:disabled {
@@ -95,9 +94,9 @@
   font-weight: var(--font-medium);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
-  transition: background var(--transition-base);
+  transition: background-color var(--transition-base);
 }
 
 .cancelBtn:hover {
-  background: var(--color-border);
+  background: var(--color-bg-soft);
 }

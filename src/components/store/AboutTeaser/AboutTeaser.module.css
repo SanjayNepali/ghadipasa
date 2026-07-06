@@ -1,6 +1,6 @@
 .section {
   padding: var(--space-20) 0;
-  background-color: var(--color-white);
+  background-color: var(--color-bg-soft);
 }
 
 .inner {
@@ -13,95 +13,38 @@
   align-items: center;
 }
 
-/* ── Text ── */
-.textCol {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
-}
-
-.eyebrow {
-  font-size: var(--text-xs);
-  font-weight: var(--font-bold);
-  letter-spacing: var(--tracking-widest);
-  text-transform: uppercase;
-  color: var(--color-primary);
-}
-
-.heading {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  font-weight: var(--font-bold);
-  color: var(--color-text-primary);
-  letter-spacing: var(--tracking-tight);
-  line-height: 1.15;
-}
-
-.body {
-  font-size: var(--text-base);
-  color: var(--color-text-muted);
-  line-height: 1.75;
-  max-width: 480px;
-}
-
-.link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  color: var(--color-primary);
-  font-size: var(--text-sm);
-  font-weight: var(--font-bold);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  border-bottom: 2px solid var(--color-primary);
-  padding-bottom: 2px;
-  width: fit-content;
-  transition: gap var(--transition-fast), color var(--transition-fast);
-}
-
-.link:hover {
-  gap: var(--space-3);
-  color: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
-}
-
-.link i {
-  font-size: 1.15rem;
-}
-
-/* ── Images ── */
 .imageCol {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .imageGrid {
-  display: flex;
-  gap: var(--space-4);
-  align-items: stretch;
-  height: 420px;
-}
-
-.imgStack {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  flex: 1;
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: 440px;
 }
 
 .imgWrap {
-  position: relative;
-  border-radius: var(--radius-lg);
+  position: absolute;
   overflow: hidden;
+  border-radius: var(--radius-image);
+  box-shadow: var(--shadow-md);
 }
 
-.imgLarge {
-  flex: 0 0 240px;
-  height: 100%;
+.imgBack {
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 75%;
 }
 
-.imgSmall {
-  flex: 1;
+.imgFront {
+  bottom: 0;
+  left: 0;
+  width: 62%;
+  height: 60%;
+  box-shadow: var(--shadow-xl);
 }
 
 .img {
@@ -113,38 +56,68 @@
   transform: scale(1.04);
 }
 
-/* ── Responsive ── */
+.textCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.eyebrow {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-walnut);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: var(--font-black);
+  color: var(--color-navy);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.15;
+}
+
+.body {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  max-width: 480px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: 44px;
+  padding: 0 var(--space-6);
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  border-radius: var(--radius-full);
+  width: fit-content;
+  transition: background-color var(--transition-fast);
+}
+
+.link:hover {
+  background-color: var(--color-walnut);
+}
+
+.link i {
+  font-size: 1.1rem;
+}
+
 @media (max-width: 900px) {
-  .inner {
-    grid-template-columns: 1fr;
-    gap: var(--space-10);
-  }
-
-  .imageCol {
-    justify-content: center;
-  }
-
-  .imageGrid {
-    height: 300px;
-    width: 100%;
-    max-width: 520px;
-  }
-
-  .imgLarge {
-    flex: 0 0 180px;
-  }
+  .inner { grid-template-columns: 1fr; gap: var(--space-10); }
+  .imageCol { justify-content: center; }
+  .imageGrid { height: 320px; }
 }
 
 @media (max-width: 480px) {
-  .section {
-    padding: var(--space-12) 0;
-  }
-
-  .inner {
-    padding: 0 var(--space-5);
-  }
-
-  .imageGrid {
-    height: 240px;
-  }
+  .section { padding: var(--space-12) 0; }
+  .inner { padding: 0 var(--space-5); }
+  .imageGrid { height: 260px; }
 }

@@ -1,22 +1,22 @@
 import { prisma } from "@/lib/prisma";
-import { getGiftRecommendations } from "@/lib/gemini";
+import { getWatchRecommendations } from "@/lib/gemini";
 import type { ProductCard } from "@/types";
 
 const MAX_CATALOG_SIZE = 60;
 const MAX_PICKS = 6;
 
-interface GiftPickResult {
+interface WatchPickResult {
   product: ProductCard;
   reason: string;
 }
 
-type GiftFinderResult =
-  | { success: true; picks: GiftPickResult[] }
+type WatchFinderResult =
+  | { success: true; picks: WatchPickResult[] }
   | { success: false; error: string };
 
-export async function getGiftFinderRecommendations(
+export async function getWatchFinderRecommendations(
   description: string
-): Promise<GiftFinderResult> {
+): Promise<WatchFinderResult> {
   const products = await prisma.product.findMany({
     where: {
       isActive: true,
@@ -54,7 +54,7 @@ export async function getGiftFinderRecommendations(
     })
     .join("\n");
 
-  const result = await getGiftRecommendations(description, catalogText);
+  const result = await getWatchRecommendations(description, catalogText);
 
   if (!result.success) {
     return { success: false, error: result.error };
@@ -62,7 +62,7 @@ export async function getGiftFinderRecommendations(
 
   const productMap = new Map(products.map((p) => [p.id, p]));
 
-  const picks: GiftPickResult[] = result.picks
+  const picks: WatchPickResult[] = result.picks
     .filter((pick) => productMap.has(pick.productId))
     .slice(0, MAX_PICKS)
     .map((pick) => {

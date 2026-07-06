@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getGiftFinderRecommendations } from "@/services/gift-finder.service";
+import { getWatchFinderRecommendations } from "@/services/watch-finder.service";
 
 const MIN_LENGTH = 10;
 const MAX_LENGTH = 500;
@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const result = await getGiftFinderRecommendations(description.trim());
+  const result = await getWatchFinderRecommendations(description.trim());
 
   if (!result.success) {
     return NextResponse.json({ success: false, error: result.error }, { status: 503 });

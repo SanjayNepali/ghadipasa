@@ -7,10 +7,10 @@ import styles from "./HeroSlideshow.module.css";
 import { APP_NAME, APP_TAGLINE } from "@/constants";
 
 const FALLBACK_SLIDES = [
-  { url: "/images/image.png",  label: "Handcrafted with love",        sub: "Every piece made by artisan hands in Nepal." },
-  { url: "/images/image1.png", label: "Gifts that tell a story",      sub: "Find something as unique as the person you love." },
-  { url: "/images/image2.png", label: "Every detail matters",         sub: "Premium materials. Thoughtful finishes." },
-  { url: "/images/image3.png", label: "Made for the people you love", sub: "Because the best gifts come from the heart." },
+  { url: "/images/image.png",  label: "Precision, worn daily",         sub: "Genuine watches and sunglasses, chosen for quality first." },
+  { url: "/images/image1.png", label: "Iconic names, real stock",      sub: "From everyday classics to standout pieces like G-Shock." },
+  { url: "/images/image2.png", label: "Every detail matters",          sub: "Premium materials. Finishes built to last." },
+  { url: "/images/image3.png", label: "Luxury watches all over Nepal", sub: "Shop online or visit us in Gongabu, Kathmandu." },
 ];
 
 interface Props {
@@ -38,7 +38,7 @@ export default function HeroSlideshow({ heroImages }: Props) {
     }
     intervalRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 5500);
     return clearTimer;
   }, [paused, slides.length]);
 
@@ -49,22 +49,40 @@ export default function HeroSlideshow({ heroImages }: Props) {
       onMouseLeave={() => setPaused(false)}
       aria-label="Hero slideshow"
     >
-      <div className={styles.inner}>
+      <div className={styles.frame}>
+        <div className={styles.imageBox}>
+          {slides.map((slide, i) => (
+            <div
+              key={i}
+              className={`${styles.slide} ${i === current ? styles.slideActive : ""}`}
+            >
+              <Image
+                src={slide.url}
+                alt={slide.label}
+                fill
+                sizes="(max-width: 900px) 100vw, 1440px"
+                className={styles.slideImg}
+                priority={i === 0}
+              />
+            </div>
+          ))}
 
-        {/* ── Left: text ── */}
-        <div className={styles.textCol}>
-          <p className={styles.eyebrow}>{APP_NAME}</p>
-          <h1 className={styles.heading}>{slides[current].label}</h1>
-          <p className={styles.sub}>{slides[current].sub}</p>
+          <div className={styles.scrim} />
 
-          <div className={styles.actions}>
-            <Link href="/shop" className={styles.cta}>
-              <i className="bx bx-shopping-bag" />
-              Shop Now
-            </Link>
+          <div className={styles.panel}>
+            <p className={styles.eyebrow}>{APP_NAME}</p>
+            <h1 className={styles.heading}>{slides[current].label}</h1>
+            <p className={styles.sub}>{slides[current].sub}</p>
+
+            <div className={styles.actions}>
+              <Link href="/shop" className={styles.cta}>
+                <i className="bx bx-shopping-bag" />
+                Shop Now
+              </Link>
+              <span className={styles.tagline}>{APP_TAGLINE}</span>
+            </div>
           </div>
 
-          {/* Dots only - left aligned */}
           <div className={styles.controls}>
             {slides.map((_, i) => (
               <button
@@ -75,29 +93,7 @@ export default function HeroSlideshow({ heroImages }: Props) {
               />
             ))}
           </div>
-
-          <p className={styles.tagline}>{APP_TAGLINE}</p>
         </div>
-
-        {/* ── Right: image ── */}
-        <div className={styles.imageCol}>
-          {slides.map((slide, i) => (
-            <div
-              key={i}
-              className={`${styles.imgWrap} ${i === current ? styles.imgActive : ""}`}
-            >
-              <Image
-                src={slide.url}
-                alt={slide.label}
-                fill
-                sizes="(max-width: 768px) 100vw, 55vw"
-                className={styles.img}
-                priority={i === 0}
-              />
-            </div>
-          ))}
-        </div>
-
       </div>
     </section>
   );

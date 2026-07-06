@@ -4,9 +4,9 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import ProductCard from "@/components/store/ProductCard/ProductCard";
 import type { ProductCard as ProductCardType } from "@/types";
-import styles from "./GiftFinderForm.module.css";
+import styles from "./WatchFinderForm.module.css";
 
-interface GiftPickResult {
+interface WatchPickResult {
   product: ProductCardType;
   reason: string;
 }
@@ -14,10 +14,10 @@ interface GiftPickResult {
 const MIN_LENGTH = 10;
 const MAX_LENGTH = 500;
 
-export default function GiftFinderForm() {
+export default function WatchFinderForm() {
   const [description, setDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [picks, setPicks] = useState<GiftPickResult[] | null>(null);
+  const [picks, setPicks] = useState<WatchPickResult[] | null>(null);
   const [hasSearched, setHasSearched] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -34,7 +34,7 @@ export default function GiftFinderForm() {
     setPicks(null);
 
     try {
-      const res = await fetch("/api/gift-finder", {
+      const res = await fetch("/api/watch-finder", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ description }),
@@ -62,7 +62,7 @@ export default function GiftFinderForm() {
       <form className={styles.form} onSubmit={handleSubmit}>
         <textarea
           className={styles.textarea}
-          placeholder="e.g. A gift for my mom who loves gardening, budget under 2000..."
+          placeholder="e.g. A stainless steel watch for daily office wear, budget under 5000..."
           value={description}
           maxLength={MAX_LENGTH}
           onChange={(e) => setDescription(e.target.value)}
@@ -75,11 +75,11 @@ export default function GiftFinderForm() {
           <button type="submit" className={styles.submitBtn} disabled={isLoading}>
             {isLoading ? (
               <>
-                <i className="bx bx-loader-alt bx-spin" /> Finding gifts...
+                <i className="bx bx-loader-alt bx-spin" /> Finding matches...
               </>
             ) : (
               <>
-                <i className="bx bx-gift" /> Find Gifts
+                <i className="bx bx-search-alt" /> Find My Watch
               </>
             )}
           </button>
@@ -104,7 +104,7 @@ export default function GiftFinderForm() {
               <i className="bx bx-search-alt" />
               <h4 className={styles.emptyTitle}>No matches found</h4>
               <p className={styles.emptyText}>
-                Try describing the recipient, occasion, or budget differently.
+                Try describing the occasion, budget, or style differently.
               </p>
             </div>
           )}

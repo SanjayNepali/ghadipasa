@@ -1,22 +1,24 @@
 // src/lib/email-templates.ts
-// Branded HTML email templates for Nimki Gift Shop.
+// Branded HTML email templates for Ghadi Pasa.
 // All styles are INLINE — email clients do not support external CSS or <style> blocks.
-// Colors match variables.css brand palette.
+// Colors match variables.css brand palette (navy / maroon / mustard).
+
+import { APP_NAME, APP_TAGLINE, CONTACT } from "@/constants";
 
 // ── Shared brand constants ────────────────────────────────────────────────────
 
 const BRAND = {
-  primary:       "#b5485a",
-  primaryDark:   "#8c2d3f",
-  primarySubtle: "#fceef1",
-  accent:        "#2d6a4f",
-  highlight:     "#e8a838",
-  textPrimary:   "#14080c",
-  textSecondary: "#5a4550",
-  textMuted:     "#9c8890",
-  border:        "#e2dade",
-  surface:       "#f3f0f1",
-  offwhite:      "#f9f7f8",
+  primary:       "#7A1F2C", // maroon
+  primaryDark:   "#5c1620",
+  primarySubtle: "#f5e9ea",
+  navy:          "#0B0F1A",
+  highlight:     "#D9A441", // mustard
+  textPrimary:   "#0B0F1A",
+  textSecondary: "#4a4a52",
+  textMuted:     "#8a8a92",
+  border:        "#e0e0e2",
+  surface:       "#f3f2f0",
+  offwhite:      "#F5F5F0",
   white:         "#ffffff",
 };
 
@@ -33,7 +35,7 @@ function shellTemplate(contentHtml: string): string {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Nimki Gift Shop</title>
+  <title>${APP_NAME}</title>
 </head>
 <body style="
   margin: 0;
@@ -53,8 +55,8 @@ function shellTemplate(contentHtml: string): string {
           <!-- Header -->
           <tr>
             <td style="
-              background-color: ${BRAND.primary};
-              border-radius: 10px 10px 0 0;
+              background-color: ${BRAND.navy};
+              border-radius: 0;
               padding: 32px 40px;
               text-align: center;
             ">
@@ -65,15 +67,15 @@ function shellTemplate(contentHtml: string): string {
                 font-weight: 700;
                 letter-spacing: -0.02em;
                 color: ${BRAND.white};
-              ">Nimki Gift Shop</p>
+              ">${APP_NAME}</p>
               <p style="
                 margin: 6px 0 0;
                 font-family: ${FONT_BODY};
                 font-size: 12px;
                 letter-spacing: 0.12em;
                 text-transform: uppercase;
-                color: rgba(255,255,255,0.75);
-              ">Handmade with love, from Nepal</p>
+                color: ${BRAND.highlight};
+              ">${APP_TAGLINE}</p>
             </td>
           </tr>
 
@@ -95,12 +97,12 @@ function shellTemplate(contentHtml: string): string {
               background-color: ${BRAND.surface};
               border: 1px solid ${BRAND.border};
               border-top: none;
-              border-radius: 0 0 10px 10px;
+              border-radius: 0;
               padding: 24px 40px;
               text-align: center;
             ">
               <p style="margin: 0 0 6px; font-size: 12px; color: ${BRAND.textMuted};">
-                © ${new Date().getFullYear()} Nimki Gift Shop · Kathmandu, Nepal
+                © ${new Date().getFullYear()} ${APP_NAME} · ${CONTACT.ADDRESS}
               </p>
               <p style="margin: 0; font-size: 12px; color: ${BRAND.textMuted};">
                 This is an automated message. Please do not reply to this email.
@@ -124,19 +126,19 @@ function ctaButton(label: string, href: string): string {
 <table role="presentation" cellpadding="0" cellspacing="0" style="margin: 28px auto;">
   <tr>
     <td style="
-      background-color: ${BRAND.primary};
-      border-radius: 6px;
+      background-color: ${BRAND.highlight};
+      border-radius: 0;
     ">
       <a href="${href}" style="
         display: inline-block;
         padding: 14px 36px;
         font-family: ${FONT_BODY};
         font-size: 15px;
-        font-weight: 600;
-        color: ${BRAND.white};
+        font-weight: 700;
+        color: ${BRAND.navy};
         text-decoration: none;
         letter-spacing: 0.02em;
-        border-radius: 6px;
+        border-radius: 0;
       ">${label}</a>
     </td>
   </tr>
@@ -168,10 +170,10 @@ export function verificationEmailTemplate(name: string, link: string): string {
     ${greeting(name)}
 
     <p style="margin: 0 0 12px; color: ${BRAND.textSecondary};">
-      Thank you for creating an account with Nimki Gift Shop. We're delighted to have you!
+      Thank you for creating an account with ${APP_NAME}. We're delighted to have you!
     </p>
     <p style="margin: 0 0 24px; color: ${BRAND.textSecondary};">
-      Please verify your email address to activate your account and start exploring our handmade collection.
+      Please verify your email address to activate your account and start browsing our watch and sunglasses collection.
     </p>
 
     ${ctaButton("Verify My Email", link)}
@@ -197,7 +199,7 @@ export function passwordResetTemplate(name: string, link: string): string {
     ${greeting(name)}
 
     <p style="margin: 0 0 12px; color: ${BRAND.textSecondary};">
-      We received a request to reset the password for your Nimki Gift Shop account.
+      We received a request to reset the password for your ${APP_NAME} account.
     </p>
     <p style="margin: 0 0 24px; color: ${BRAND.textSecondary};">
       Click the button below to choose a new password. This link is valid for <strong>1 hour</strong>.
@@ -212,7 +214,7 @@ export function passwordResetTemplate(name: string, link: string): string {
         <td style="
           background-color: ${BRAND.primarySubtle};
           border-left: 3px solid ${BRAND.primary};
-          border-radius: 0 6px 6px 0;
+          border-radius: 0;
           padding: 14px 18px;
           margin-bottom: 20px;
         ">
@@ -281,7 +283,7 @@ export function orderConfirmationTemplate(
     ${greeting(name)}
 
     <p style="margin: 0 0 6px; color: ${BRAND.textSecondary};">
-      Thank you for your order! We've received it and will begin preparing your handmade items right away.
+      Thank you for your order! We've received it and are getting it ready for shipment.
     </p>
     <p style="margin: 0 0 28px; font-size: 13px; color: ${BRAND.textMuted};">
       Order number: <strong style="color: ${BRAND.primary};">#${order.orderNumber}</strong>

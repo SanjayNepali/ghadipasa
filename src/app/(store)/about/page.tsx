@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 
 export const metadata = {
   title: "About Us",
-  description: `Learn the story behind ${APP_NAME}  handmade gifts crafted with care in Nepal.`,
+  description: `Learn the story behind ${APP_NAME} — genuine watches and sunglasses, sold with trust, across Nepal.`,
 };
 
 export default function AboutPage() {
@@ -11,16 +11,17 @@ export default function AboutPage() {
     <main className={styles.main}>
       <div className="container container--narrow">
         <p className={styles.eyebrow}>Our Story</p>
-        <h1 className={styles.title}>Handmade with heart, rooted in Nepal</h1>
+        <h1 className={styles.title}>Genuine timepieces, trusted across Nepal</h1>
         <p className={styles.paragraph}>
-          {APP_NAME} began with a simple belief: gifts mean more when they carry
-          the hands and heart of the person who made them. We work with local
-          artisans across Nepal to bring handcrafted pieces each one imperfectly
-          perfect into homes around the world.
+          {APP_NAME} started with a straightforward goal: give customers in
+          Nepal a reliable place to find genuine watches and sunglasses,
+          without second guessing what they are buying. From everyday wear to
+          recognizable names like G-Shock, every piece we carry is chosen for
+          quality first.
         </p>
         <p className={styles.paragraph}>
-          Every purchase supports small-scale makers and traditional
-          craftsmanship that might otherwise be lost to mass production.
+          Visit us in person at our store in Gongabu, Ganesthan (opposite
+          Bigmart), Kathmandu, or shop online with Cash on Delivery or eSewa.
           We&apos;re just getting started, thank you for being part of it.
         </p>
       </div>
